@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Vídeo com Libras</title>
+
+  <style>
+    body {
+      background: #111;
+      color: #fff;
+      font-family: Arial;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .video-container {
+      position: relative;
+      max-width: 800px;
+      margin: auto;
+    }
+
+  
+    .video-principal {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    
+    .libras {
+      position: absolute;
+      bottom: 60px;
+      left: 5px;
+      width: 115px;
+      border: 2px solid #fff;
+      border-radius: 10px;
+      background: #000000c9;
+    }
+
+    .libras video {
+      width: 100%;
+      border-radius: 5% ;
+    }
+
+    .descricao {
+      margin-top: 15px;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Primeiro Teste video</h1>
+
+  <div class="video-container">
+
+    
+    <video class="video-principal" controls>
+      <source src="/src/grupo-2/public/video.mp4" type="video/mp4">
+    </video>
+
+    
+    <div class="libras">
+      <video autoplay muted loop>
+        <source src="libras" type="video/mp4">
+      </video>
+    </div>
+
+  </div>
+
+  <div class="descricao">
+    <p>
+      Este vídeo possui um intérprete de Libras no canto inferior direito
+      para garantir acessibilidade a pessoas surdas.
+    </p>
+  </div>
+
+</body>
+</html>
