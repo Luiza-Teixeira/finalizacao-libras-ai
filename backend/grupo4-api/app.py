@@ -7,6 +7,9 @@ import time
 
 from flask_cors import CORS
 from flask import Flask, request, jsonify, send_file
+import static_ffmpeg
+
+static_ffmpeg.add_paths()
 
 app = Flask(__name__)
 CORS(app)
