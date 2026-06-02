@@ -15,7 +15,14 @@ O Grupo 4 atua como integrador principal entre os serviços responsáveis por:
 
 ---
 
-# ⚙️ Fluxo do Sistema
+## 🚀 Links de Produção (Deploy)
+
+- **Frontend:** https://finalizacao-libras-ai-rwf5.vercel.app/
+- **Backend (API):** https://finalizacao-libras-ai.onrender.com
+
+---
+
+## ⚙️ Fluxo do Sistema
 
 O backend realiza:
 
@@ -24,49 +31,41 @@ O backend realiza:
 3. Envio do vídeo para API de transcrição;
 4. Recebimento do conteúdo transcrito;
 5. Processamento do avatar em Libras;
-6. Sincronização do avatar com o vídeo original;
-7. Geração do vídeo final utilizando FFmpeg.
+6. Sincronização do avatar com o vídeo original via *Picture-in-Picture*;
+7. Geração do vídeo final utilizando FFmpeg;
+8. Limpeza automática de arquivos temporários.
 
 ---
 
-# 🧩 Integrações
+## 🧩 Integrações
 
-## Grupo 1 — Extração de Áudio
-
-Responsável pela extração do áudio do vídeo enviado.
-
----
-
-## Grupo 2 — Transcrição
-
-Responsável por gerar a transcrição automática do conteúdo do vídeo.
+- **Grupo 1 — Extração de Áudio:** Responsável pela extração do áudio do vídeo enviado.
+- **Grupo 2 — Transcrição:** Responsável por gerar a transcrição automática do conteúdo do vídeo.
+- **Grupo 3 — Avatar Libras:** Responsável pela renderização e animação do avatar em Libras.
 
 ---
 
-## Grupo 3 — Avatar Libras
+## 🛠️ Tecnologias Utilizadas
 
-Responsável pela renderização e animação do avatar em Libras.
+### Backend
+- **Python & Flask**
+- **FFmpeg (via `static-ffmpeg`)** - Processamento nativo de mídia sem dependência de Docker.
+- **Requests** - Comunicação com as APIs externas.
+- **Gunicorn** - Servidor WSGI para ambiente de produção.
+- **Flask-CORS** - Gerenciamento de permissões de origem cruzada.
 
----
+### Frontend
+- **React**
+- **Vite**
+- **TailwindCSS**
 
-# 🛠️ Tecnologias Utilizadas
-
-## Backend
-
-- Python
-- Flask
-- FFmpeg
-- Requests
-
-## Frontend
-
-- React
-- Vite
-- TailwindCSS
+### Infraestrutura
+- **Render** - Hospedagem da API Python.
+- **Vercel** - Hospedagem da interface React.
 
 ---
 
-# 📂 Estrutura do Projeto
+## 📂 Estrutura do Projeto
 
 ```txt
 backend/
@@ -76,6 +75,7 @@ frontend/
 ---
 
 # ▶️ Executando o Backend
+Nota: As pastas uploads, outputs e temp são gerenciadas e criadas automaticamente pela aplicação na primeira execução, garantindo um repositório limpo.
 
 ## Instalar dependências
 
@@ -91,7 +91,7 @@ python app.py
 
 ---
 
-# ▶️ Executando o Frontend
+# ▶️ Executando o Frontend(Localmente)
 
 ## Instalar dependências
 
@@ -110,16 +110,33 @@ npm run dev
 # 📹 Funcionalidades
 
 - Upload de vídeo;
+
 - Extração automática de áudio;
-- Transcrição automática;
-- Integração com avatar em Libras;
-- Geração de vídeo acessível;
-- Download do vídeo final.
+
+- Transcrição automática com resiliência a falhas na leitura de dados;
+
+- Integração dinâmica com o motor 3D do avatar em Libras;
+
+- Geração de vídeo acessível renderizado em tempo real;
+
+- Download do arquivo final .mp4.
 
 ---
 
 # 👥 Equipe
--ADRIEL DAYWISON BIBIANO LUIZ -ANDERSON OLÍVIO DE ALMEIDA SILVA -ARTHUR DA SILVA BEZERRA DE SANTANA -DANDÁLIA LUIZA DA SILVA TEIXEIRA -JADER GABRIEL DE OLIVEIRA SILVA -KAUAM BRILHANTE COSTA -VICTORIA MARIA BELTRÃO DE ANDRADE
+ADRIEL DAYWISON BIBIANO LUIZ
+
+ANDERSON OLÍVIO DE ALMEIDA SILVA
+
+ARTHUR DA SILVA BEZERRA DE SANTANA
+
+DANDÁLIA LUIZA DA SILVA TEIXEIRA
+
+JADER GABRIEL DE OLIVEIRA SILVA
+
+KAUAM BRILHANTE COSTA
+
+VICTORIA MARIA BELTRÃO DE ANDRADE
 
 Projeto desenvolvido durante a Residência Tecnológica.
 
